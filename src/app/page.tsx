@@ -1,11 +1,7 @@
 import Header from '@/components/Header/Header';
-import Hero from '@/components/Hero/Hero';
-import Intro from '@/components/Intro/Intro';
-import Timeline from '@/components/Timeline/Timeline';
-import EndSection from '@/components/EndSection/EndSection';
 
 export const metadata = {
-  title: 'OKNO — Our Journey',
+  title: 'OKNO Modhomes',
   description: 'Fabricating the future of sustainable luxury living.',
 };
 
@@ -13,11 +9,11 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
-        <Hero />
-        <Intro />
-        <Timeline />
-        <EndSection />
+      <main style={{ padding: "150px 5vw", minHeight: "100vh" }}>
+        <h1 style={{ fontFamily: "Playfair Display, serif", fontSize: "3rem" }}>
+          OKNO Modhomes
+        </h1>
+        <p>Homepage is currently under construction. Please use the navigation above.</p>
       </main>
     </>
   );
