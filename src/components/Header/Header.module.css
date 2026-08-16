@@ -1,0 +1,131 @@
+.oknoGlassNav {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1180px, calc(100vw - 42px));
+  min-height: 64px;
+  padding: 8px 10px 8px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  z-index: 10000;
+  background: rgba(246, 242, 234, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  box-shadow: 0 14px 45px rgba(74, 58, 37, 0.11), inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+  backdrop-filter: blur(18px) saturate(120%);
+  border-radius: 999px;
+}
+
+.oknoBrand {
+  color: #20201d;
+  text-decoration: none;
+  font: 700 19px Arial, sans-serif;
+  letter-spacing: 0.28em;
+  white-space: nowrap;
+}
+
+.oknoBrand span {
+  color: #a88b5c;
+}
+
+.oknoNavLinks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 2vw, 30px);
+}
+
+.oknoNavLinks a {
+  color: #4d493f;
+  text-decoration: none;
+  font: 500 13px Arial, sans-serif;
+  white-space: nowrap;
+  position: relative;
+  padding: 10px 1px;
+}
+
+.oknoNavLinks a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 4px;
+  height: 1px;
+  background: #a88b5c;
+  transition: right 0.3s;
+}
+
+.oknoNavLinks a:hover:after {
+  right: 0;
+}
+
+.oknoNavLinks a:hover {
+  color: #171714;
+}
+
+.oknoNavCta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fffdf8;
+  background: #a88b5c;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 13px 18px 13px 20px;
+  font: 600 12px Arial, sans-serif;
+  white-space: nowrap;
+  box-shadow: 0 5px 18px rgba(168, 139, 92, 0.22);
+  border: none;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+.oknoNavCta span {
+  font-size: 16px;
+}
+
+.oknoNavCta:hover {
+  background: #96794e;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1000px) {
+  .oknoNavLinks {
+    gap: 15px;
+  }
+  .oknoNavLinks a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 720px) {
+  .oknoGlassNav {
+    top: 10px;
+    width: calc(100vw - 20px);
+    min-height: 58px;
+    padding: 7px 8px 7px 16px;
+    border-radius: 22px;
+  }
+  .oknoBrand {
+    font-size: 16px;
+  }
+  .oknoNavLinks {
+    flex: 1;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 18px;
+  }
+  .oknoNavLinks::-webkit-scrollbar {
+    display: none;
+  }
+  .oknoNavLinks a {
+    flex: 0 0 auto;
+  }
+  .oknoNavCta {
+    display: none;
+  }
+}
