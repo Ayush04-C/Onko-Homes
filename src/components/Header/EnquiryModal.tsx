@@ -152,7 +152,6 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
         <div className={`${styles.side} ${styles.right}`}>OKNO · DRAWN, THEN BUILT</div>
         
         <div className={styles.enquiryTop}>
-          <div className={styles.checkpoint}></div>
           
           <div className={styles.enquiryHeader}>
             <div className={styles.eyebrow}>BEGIN</div>
