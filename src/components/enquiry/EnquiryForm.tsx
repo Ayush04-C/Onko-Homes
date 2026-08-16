@@ -1,12 +1,11 @@
 import { useEffect, useState, useRef } from 'react';
-import styles from './EnquiryModal.module.css';
+import styles from './EnquiryForm.module.css';
 
-interface EnquiryModalProps {
+interface EnquiryFormProps {
   isOpen: boolean;
-  onClose: () => void;
 }
 
-export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
+export default function EnquiryForm({ isOpen }: EnquiryFormProps) {
   const [activeDoor, setActiveDoor] = useState(0);
   const screenRef = useRef<HTMLElement>(null);
 

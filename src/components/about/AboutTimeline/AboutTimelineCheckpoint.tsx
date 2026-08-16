@@ -1,4 +1,4 @@
-import styles from './Timeline.module.css';
+import styles from './AboutTimeline.module.css';
 
 interface TimelineCheckpointProps {
   id: string;
@@ -11,7 +11,7 @@ interface TimelineCheckpointProps {
   className: string;
 }
 
-export default function TimelineCheckpoint({
+export default function AboutTimelineCheckpoint({
   id,
   progress,
   year,

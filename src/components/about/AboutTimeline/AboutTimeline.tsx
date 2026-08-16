@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
-import styles from './Timeline.module.css';
-import { timelineData } from '@/data/timeline';
-import TimelineCheckpoint from './TimelineCheckpoint';
+import styles from './AboutTimeline.module.css';
+import { timelineData } from '../aboutData';
+import AboutTimelineCheckpoint from './AboutTimelineCheckpoint';
 
-export default function Timeline() {
+export default function AboutTimeline() {
   const routeRef = useRef<SVGPathElement>(null);
   const tipRef = useRef<HTMLDivElement>(null);
   const coordRef = useRef<HTMLDivElement>(null);
@@ -125,7 +125,7 @@ export default function Timeline() {
       <div ref={coordRef} id="liveCoordinate" className={styles.liveCoordinate} dangerouslySetInnerHTML={{ __html: coordText }}></div>
 
       {timelineData.map((checkpoint) => (
-        <TimelineCheckpoint
+        <AboutTimelineCheckpoint
           key={checkpoint.id}
           {...checkpoint}
         />

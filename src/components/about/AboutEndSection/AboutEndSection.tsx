@@ -1,6 +1,6 @@
-import styles from './EndSection.module.css';
+import styles from './AboutEndSection.module.css';
 
-export default function EndSection() {
+export default function AboutEndSection() {
   return (
     <section className={styles.end}>
       <div className={styles.sectionLabel}>THE NEXT CHAPTER</div>

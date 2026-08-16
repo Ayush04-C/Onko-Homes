@@ -1,6 +1,6 @@
-import styles from './Intro.module.css';
+import styles from './AboutIntro.module.css';
 
-export default function Intro() {
+export default function AboutIntro() {
   return (
     <section className={styles.intro}>
       <div className={styles.sectionLabel}>THE STORY OF OKNO</div>

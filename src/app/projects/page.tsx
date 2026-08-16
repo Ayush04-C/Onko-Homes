@@ -1,19 +1,19 @@
 import Header from '@/components/Header/Header';
 
 export const metadata = {
-  title: 'OKNO Modhomes',
-  description: 'Fabricating the future of sustainable luxury living.',
+  title: 'OKNO — Projects',
+  description: 'Our portfolio of sustainable luxury living projects.',
 };
 
-export default function Home() {
+export default function ProjectsPage() {
   return (
     <>
       <Header />
       <main style={{ padding: "150px 5vw", minHeight: "100vh" }}>
         <h1 style={{ fontFamily: "Playfair Display, serif", fontSize: "3rem" }}>
-          OKNO Modhomes
+          Projects
         </h1>
-        <p>Homepage is currently under construction. Please use the navigation above.</p>
+        <p>This page is currently under construction.</p>
       </main>
     </>
   );
