@@ -1,4 +1,5 @@
 import Header from '@/components/Header/Header';
+import CinematicJourney from '@/components/CinematicJourney/CinematicJourney';
 
 export const metadata = {
   title: 'OKNO Modhomes',
@@ -9,12 +10,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main style={{ padding: "150px 5vw", minHeight: "100vh" }}>
-        <h1 style={{ fontFamily: "Playfair Display, serif", fontSize: "3rem" }}>
-          OKNO Modhomes
-        </h1>
-        <p>Homepage is currently under construction. Please use the navigation above.</p>
-      </main>
+      <CinematicJourney />
     </>
   );
 }
