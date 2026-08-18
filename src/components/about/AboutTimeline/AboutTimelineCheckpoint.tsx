@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from './AboutTimeline.module.css';
 
 interface TimelineCheckpointProps {
@@ -8,17 +9,17 @@ interface TimelineCheckpointProps {
   description: string;
   url: string;
   source: string;
+  image: string;
   className: string;
 }
 
 export default function AboutTimelineCheckpoint({
-  id,
   progress,
   year,
   title,
   description,
-  url,
   source,
+  image,
   className
 }: TimelineCheckpointProps) {
   return (
@@ -33,12 +34,7 @@ export default function AboutTimelineCheckpoint({
           <p>{description}</p>
         </div>
         <div className={`${styles.storyMedia} ${styles.siteVisual}`}>
-          <iframe 
-            src={url} 
-            loading="lazy" 
-            title="OKNO Modhomes visual"
-            sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-          />
+          <Image src={image} alt={`${title} visual`} fill sizes="(max-width: 800px) 82vw, 47vw" />
           <div className={styles.siteSource}>{source}</div>
         </div>
       </div>
