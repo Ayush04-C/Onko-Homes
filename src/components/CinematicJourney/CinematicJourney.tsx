@@ -105,7 +105,7 @@ const HOTSPOTS: HotspotConfig[] = [
     href: '/about',
     label: 'Go to About section',
     activeStart: 12.95,
-    activeEnd: 14.85,
+    activeEnd: Number.POSITIVE_INFINITY,
     keyframes: [
       { time: 12.95, x: 61, y: 20, width: 42, height: 15 },
       { time: 13.65, x: 58, y: 22, width: 44, height: 15 },
