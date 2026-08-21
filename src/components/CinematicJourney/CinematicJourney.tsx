@@ -89,9 +89,8 @@ const HOTSPOTS: HotspotConfig[] = [
   },
   {
     id: 'hospitality',
-    href: 'https://www.oknomodhomes.com/hospitality',
+    href: '/hospitality',
     label: 'Go to Hospitality section',
-    external: true,
     activeStart: 10.85,
     activeEnd: 12.8,
     keyframes: [
@@ -331,12 +330,12 @@ export default function CinematicJourney() {
     };
   }, []);
 
-  const handleEnterProjects = (e: React.MouseEvent) => {
+  const handleEnterPage = (e: React.MouseEvent, path: string) => {
     e.preventDefault();
     if (isLeaving) return;
     setIsLeaving(true);
     setTimeout(() => {
-      router.push('/projects');
+      router.push(path);
     }, 780);
   };
 
@@ -379,7 +378,7 @@ export default function CinematicJourney() {
               aria-label={hotspot.label}
               target={hotspot.external ? '_blank' : undefined}
               rel={hotspot.external ? 'noopener' : undefined}
-              onClick={hotspot.id === 'project' ? handleEnterProjects : undefined}
+              onClick={(hotspot.id === 'project' || hotspot.id === 'hospitality') ? (e) => handleEnterPage(e, hotspot.href) : undefined}
             />
           ))}
         </div>
