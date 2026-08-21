@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './HospitalityExperience.module.css';
 
@@ -13,6 +14,7 @@ type Story = {
   body: string;
   meta: string;
   cardTitle: string;
+  image: string;
 };
 
 const stories: Story[] = [
@@ -25,6 +27,7 @@ const stories: Story[] = [
     body: 'Built around the landscape rather than against it, this project brings together compact modular construction, carefully framed views and a slower hospitality experience.',
     meta: 'Mountain Retreat',
     cardTitle: 'Coorg',
+    image: '/assets/about/IMG_20260813_132709.jpg',
   },
   {
     tag: 'Private Residence / Valley',
@@ -35,6 +38,7 @@ const stories: Story[] = [
     body: 'The project focuses on a restrained footprint, generous openings and a warm interior material palette.',
     meta: 'Private Residence',
     cardTitle: 'The Valley House',
+    image: '/assets/about/IMG_20260813_132728.jpg',
   },
   {
     tag: 'Hospitality / Forest',
@@ -45,6 +49,7 @@ const stories: Story[] = [
     body: 'A hospitality-focused cabin designed for short stays, fast delivery and a strong connection to its surroundings.',
     meta: 'Hospitality',
     cardTitle: 'Forest Cabin',
+    image: '/assets/about/IMG_20260813_132830.jpg',
   },
   {
     tag: 'Retreat / Lake',
@@ -55,6 +60,7 @@ const stories: Story[] = [
     body: 'The house uses a compact modular arrangement to maximise views while maintaining a calm, intimate interior.',
     meta: 'Retreat',
     cardTitle: 'Lake House',
+    image: '/assets/about/IMG_20260813_133034.jpg',
   },
   {
     tag: 'Signature / Coorg',
@@ -65,6 +71,7 @@ const stories: Story[] = [
     body: 'A cinematic hospitality residence demonstrating how modular construction can support highly individual architectural experiences.',
     meta: 'Signature',
     cardTitle: 'Mirror House',
+    image: '/assets/about/Screenshot_2026-08-13-13-20-32-62_c37d74246d9c81aa0bb824b57eaf7062.jpg',
   },
   {
     tag: 'Hospitality / Hills',
@@ -75,6 +82,7 @@ const stories: Story[] = [
     body: 'The project combines repeatable modular systems with site-specific orientation and hospitality requirements.',
     meta: 'Hospitality',
     cardTitle: 'Hilltop Stay',
+    image: '/assets/projects/project-highlands.webp',
   },
   {
     tag: 'Cabins / Pine Forest',
@@ -85,6 +93,7 @@ const stories: Story[] = [
     body: 'A compact cabin designed around warmth, material tactility and minimal disturbance to the surrounding landscape.',
     meta: 'Cabins',
     cardTitle: 'Pine Retreat',
+    image: '/assets/projects/project-nordic.webp',
   },
   {
     tag: 'Resort / Valley',
@@ -95,6 +104,7 @@ const stories: Story[] = [
     body: 'A modular hospitality system designed to grow over time while keeping a consistent architectural language.',
     meta: 'Resort',
     cardTitle: 'Valley Collection',
+    image: '/assets/projects/project-coast.webp',
   },
   {
     tag: 'Private Escape / River',
@@ -105,6 +115,7 @@ const stories: Story[] = [
     body: 'A low-impact modular residence with carefully positioned openings and a strong relationship with the surrounding terrain.',
     meta: 'Private Escape',
     cardTitle: 'River House',
+    image: '/assets/projects/project-desert.webp',
   },
 ];
 
@@ -126,9 +137,7 @@ export default function HospitalityExperience() {
   const selectedStory = selectedStoryIndex === null ? null : stories[selectedStoryIndex];
 
   const openDetail = useCallback((index: number) => {
-    const photo = photoRefs.current[index];
-    const background = photo ? getComputedStyle(photo).backgroundImage : '';
-    setDetailBackground(background);
+    setDetailBackground(`url("${stories[index].image}")`);
     setSelectedStoryIndex(index);
     document.body.style.overflow = 'hidden';
   }, []);
@@ -284,6 +293,13 @@ export default function HospitalityExperience() {
                   ref={(element) => { photoRefs.current[index] = element; }}
                   className={styles.photo}
                 >
+                  <Image
+                    src={story.image}
+                    alt={`${story.title} hospitality story`}
+                    fill
+                    sizes="(max-width: 768px) 46vw, 210px"
+                    className={styles.cardImage}
+                  />
                   <div className={styles.cardMeta}>
                     <small>{story.meta}</small>
                     <strong>{story.cardTitle}</strong>

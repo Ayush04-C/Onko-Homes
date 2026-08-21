@@ -179,7 +179,7 @@
 .journeyHeader {
   position: absolute;
   z-index: 8;
-  top: 120px;
+  top: 96px;
   left: 7vw;
   pointer-events: none;
 }
@@ -252,6 +252,12 @@
   position: relative;
 }
 
+.cardImage {
+  object-fit: cover;
+  filter: saturate(.92) contrast(.96);
+  transform: scale(1.03);
+}
+
 .storyCard:nth-child(1) .photo { background: linear-gradient(145deg, #273229, #9c8a6d 55%, #d5c8b2); }
 .storyCard:nth-child(2) .photo { background: linear-gradient(35deg, #b79d79, #e5ddd0 45%, #4c5948); }
 .storyCard:nth-child(3) .photo { background: linear-gradient(155deg, #343b32, #7c876c 45%, #c9bda8); }
@@ -267,9 +273,10 @@
   position: absolute;
   inset: 0;
   background:
+    linear-gradient(180deg, transparent 0 42%, rgba(23, 21, 19, .58) 100%),
     linear-gradient(130deg, transparent 0 35%, rgba(255, 255, 255, .18) 48%, transparent 58%),
     radial-gradient(circle at 75% 25%, rgba(255, 255, 255, .22), transparent 25%);
-  mix-blend-mode: screen;
+  mix-blend-mode: normal;
 }
 
 .cardMeta {
@@ -302,7 +309,7 @@
   position: absolute;
   z-index: 18;
   left: 50%;
-  top: 50%;
+  top: 31%;
   width: min(440px, 34vw);
   min-height: 0;
   padding: 0 18px 24px;
@@ -315,14 +322,14 @@
   text-align: center;
   isolation: auto;
   opacity: 0;
-  transform: translate(-50%, calc(-50% - 118px));
+  transform: translate(-50%, -50%);
   transition: opacity .5s ease, transform .5s ease;
   pointer-events: none;
 }
 
 .activeStory.visible {
   opacity: 1;
-  transform: translate(-50%, calc(-50% - 118px));
+  transform: translate(-50%, -50%);
 }
 
 .activeStory .tag {
@@ -462,6 +469,8 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #374137, #b69c76, #e1d7c7);
+  background-size: cover;
+  background-position: center;
 }
 
 .detailImage::after {
@@ -601,7 +610,7 @@
   }
 
   .journeyHeader {
-    top: 100px;
+    top: 86px;
     left: 7vw;
   }
 
@@ -614,13 +623,14 @@
   }
 
   .activeStory {
+    top: 30%;
     width: min(330px, 72vw);
     padding-bottom: 18px;
-    transform: translate(-50%, calc(-50% - 94px));
+    transform: translate(-50%, -50%);
   }
 
   .activeStory.visible {
-    transform: translate(-50%, calc(-50% - 94px));
+    transform: translate(-50%, -50%);
   }
 
   .activeStory h3 {
