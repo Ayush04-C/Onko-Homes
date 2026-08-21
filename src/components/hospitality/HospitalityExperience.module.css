@@ -387,6 +387,14 @@
   transform: translate(-50%, -100%) translateY(-15px) scale(1);
 }
 
+.hoverInfo.below {
+  transform: translate(-50%, 0) translateY(10px) scale(0.95);
+}
+
+.hoverInfo.below.visible {
+  transform: translate(-50%, 0) translateY(15px) scale(1);
+}
+
 .tag {
   font: 9px "DM Mono", monospace;
   color: var(--gold);

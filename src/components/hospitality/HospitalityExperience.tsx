@@ -132,6 +132,7 @@ export default function HospitalityExperience() {
   const hoverInfoRef = useRef<HTMLDivElement>(null);
 
   const [hoveredStory, setHoveredStory] = useState<Story | null>(null);
+  const [hoverPlacement, setHoverPlacement] = useState<'above' | 'below'>('above');
   const [activeStoryIndex, setActiveStoryIndex] = useState(0);
   const [selectedStoryIndex, setSelectedStoryIndex] = useState<number | null>(null);
   const [detailBackground, setDetailBackground] = useState('');
@@ -288,8 +289,11 @@ export default function HospitalityExperience() {
                   if (hoverInfoRef.current && hoverInfoRef.current.parentElement) {
                     const parentRect = hoverInfoRef.current.parentElement.getBoundingClientRect();
                     const cardRect = e.currentTarget.getBoundingClientRect();
-                    const x = cardRect.left + cardRect.width / 2 - parentRect.left;
-                    const y = cardRect.top - parentRect.top;
+                    const cardCenterX = cardRect.left + cardRect.width / 2;
+                    const shouldPlaceBelow = cardCenterX < parentRect.left + parentRect.width * 0.5;
+                    const x = cardCenterX - parentRect.left;
+                    const y = (shouldPlaceBelow ? cardRect.bottom : cardRect.top) - parentRect.top;
+                    setHoverPlacement(shouldPlaceBelow ? 'below' : 'above');
                     hoverInfoRef.current.style.setProperty('--mouse-x', `${x}px`);
                     hoverInfoRef.current.style.setProperty('--mouse-y', `${y}px`);
                   }
@@ -317,7 +321,10 @@ export default function HospitalityExperience() {
             ))}
           </div>
 
-          <div ref={hoverInfoRef} className={`${styles.hoverInfo} ${hoveredStory ? styles.visible : ''}`}>
+          <div
+            ref={hoverInfoRef}
+            className={`${styles.hoverInfo} ${hoverPlacement === 'below' ? styles.below : ''} ${hoveredStory ? styles.visible : ''}`}
+          >
             <div className={styles.tag}>{hoveredStory?.tag ?? stories[0].tag}</div>
             <h3>{hoveredStory?.title ?? stories[0].title}</h3>
             <p>{hoveredStory?.desc ?? stories[0].desc}</p>
