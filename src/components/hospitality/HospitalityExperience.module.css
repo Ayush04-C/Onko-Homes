@@ -179,7 +179,7 @@
 .journeyHeader {
   position: absolute;
   z-index: 8;
-  top: 96px;
+  top: 48px;
   left: 7vw;
   pointer-events: none;
 }
@@ -309,7 +309,7 @@
   position: absolute;
   z-index: 18;
   left: 50%;
-  top: 31%;
+  top: 22%;
   width: min(440px, 34vw);
   min-height: 0;
   padding: 0 18px 24px;
@@ -385,6 +385,14 @@
 .hoverInfo.visible {
   opacity: 1;
   transform: translate(-50%, -100%) translateY(-15px) scale(1);
+}
+
+.hoverInfo.below {
+  transform: translate(-50%, 0) translateY(10px) scale(0.95);
+}
+
+.hoverInfo.below.visible {
+  transform: translate(-50%, 0) translateY(15px) scale(1);
 }
 
 .tag {
@@ -610,7 +618,7 @@
   }
 
   .journeyHeader {
-    top: 86px;
+    top: 48px;
     left: 7vw;
   }
 
@@ -623,7 +631,7 @@
   }
 
   .activeStory {
-    top: 30%;
+    top: 22%;
     width: min(330px, 72vw);
     padding-bottom: 18px;
     transform: translate(-50%, -50%);
