@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from 'react';
+import Image from 'next/image';
 import styles from './Journal.module.css';
 import { Article } from './journalData';
 
@@ -24,7 +25,7 @@ export default function JournalModal({ article, onClose }: Props) {
         <article className={styles.modalPanel}>
           <button className={styles.modalClose} onClick={onClose} aria-label="Close">×</button>
           <div className={styles.articleHero}>
-            <img src={article.image} alt={article.title} />
+            <Image src={article.image} alt={article.title} fill sizes="min(1180px, 94vw)" />
             <div className={styles.articleHeroCopy}>
               <div className={styles.cardType}>{article.type}</div>
               <h2>{article.title}</h2>

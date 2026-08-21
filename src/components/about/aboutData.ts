@@ -7,6 +7,7 @@ export const timelineData = [
     description: 'A studio, a shed, and a conviction that precision could be manufactured.',
     url: 'https://www.oknomodhomes.com/',
     source: 'OKNO MODHOMES',
+    image: '/assets/about/IMG_20260813_132709.jpg',
     className: 's1',
   },
   {
@@ -17,6 +18,7 @@ export const timelineData = [
     description: 'Drawn, panelised, and standing — the system proved on a single house.',
     url: 'https://www.oknomodhomes.com/models/forza',
     source: 'OKNO MODHOMES',
+    image: '/assets/about/IMG_20260813_132728.jpg',
     className: 's2',
   },
   {
@@ -27,6 +29,7 @@ export const timelineData = [
     description: 'A real production line, and with it a real promise: ninety days, in writing.',
     url: 'https://www.oknomodhomes.com/models/orgo',
     source: 'OKNO MODHOMES',
+    image: '/assets/about/IMG_20260813_132830.jpg',
     className: 's3',
   },
   {
@@ -37,6 +40,7 @@ export const timelineData = [
     description: 'Hospitality at scale, monsoon included, delivered on schedule.',
     url: 'https://www.oknomodhomes.com/models/tengo',
     source: 'OKNO MODHOMES',
+    image: '/assets/about/IMG_20260813_133034.jpg',
     className: 's4',
   },
   {
@@ -47,6 +51,7 @@ export const timelineData = [
     description: 'The system certified — audited, not asserted.',
     url: 'https://www.oknomodhomes.com/models/kray',
     source: 'OKNO MODHOMES',
+    image: '/assets/about/award-feature.jpeg',
     className: 's5',
   },
   {
@@ -57,6 +62,7 @@ export const timelineData = [
     description: 'The country\'s first panelised home export. The road became an ocean.',
     url: 'https://www.oknomodhomes.com/gallery',
     source: 'OKNO MODHOMES',
+    image: '/assets/about/award-certificate.jpeg',
     className: 's6',
   },
   {
@@ -67,6 +73,7 @@ export const timelineData = [
     description: 'AD India, Dezeen, Elle Decor among them — and a record that keeps growing.',
     url: 'https://www.oknomodhomes.com/collabs',
     source: 'OKNO MODHOMES',
+    image: '/assets/about/Screenshot_2026-08-13-13-20-32-62_c37d74246d9c81aa0bb824b57eaf7062.jpg',
     className: 's7',
   }
 ];

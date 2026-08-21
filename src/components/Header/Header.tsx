@@ -15,7 +15,7 @@ export default function Header() {
           <Link href="/projects">Projects</Link>
           <Link href="https://www.oknomodhomes.com/models" target="_blank" rel="noopener">Models</Link>
           <Link href="https://www.oknomodhomes.com/hospitality" target="_blank" rel="noopener">Hospitality</Link>
-          <Link href="https://www.oknomodhomes.com/process" target="_blank" rel="noopener">Process</Link>
+          <Link href="/process">Process</Link>
           <Link href="/journal">Journal</Link>
         </div>
         <Link href="/enquiry" className={styles.oknoNavCta}>
