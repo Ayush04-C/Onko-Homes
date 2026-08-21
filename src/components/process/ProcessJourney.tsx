@@ -341,7 +341,7 @@ export default function ProcessJourney() {
             <nav className={styles.primaryNav} aria-label="Primary navigation">
               <Link href="/projects">Projects</Link>
               <a href="https://www.oknomodhomes.com/models">Models</a>
-              <a href="https://www.oknomodhomes.com/hospitality">Hospitality</a>
+              <Link href="/hospitality">Hospitality</Link>
               <Link href="/process" aria-current="page">Process</Link>
               <Link href="/journal">Journal</Link>
             </nav>
