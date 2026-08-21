@@ -366,9 +366,9 @@
 .hoverInfo {
   position: absolute;
   z-index: 30;
-  left: 50%;
-  top: 43%;
-  transform: translate(-50%, -50%) translateY(18px);
+  left: var(--mouse-x, 50%);
+  top: var(--mouse-y, 43%);
+  transform: translate(-50%, -100%) translateY(-10px) scale(0.95);
   width: min(420px, 40vw);
   padding: 22px 25px;
   border: 1px solid rgba(255, 255, 255, .6);
@@ -379,12 +379,12 @@
   box-shadow: 0 25px 70px rgba(30, 24, 18, .12);
   opacity: 0;
   pointer-events: none;
-  transition: .35s ease;
+  transition: opacity .35s ease, transform .35s ease;
 }
 
 .hoverInfo.visible {
   opacity: 1;
-  transform: translate(-50%, -50%) translateY(0);
+  transform: translate(-50%, -100%) translateY(-15px) scale(1);
 }
 
 .tag {
@@ -643,7 +643,6 @@
 
   .hoverInfo {
     width: 80vw;
-    top: 30%;
   }
 
   .detail {
