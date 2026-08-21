@@ -228,7 +228,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 150px;
+  width: clamp(170px, 13vw, 210px);
   aspect-ratio: 1 / 1.12;
   transform: translate3d(-50%, -50%, 0) rotate(0deg);
   cursor: pointer;

@@ -158,18 +158,19 @@ export default function HospitalityExperience() {
     const placeCards = (progress: number) => {
       const count = stories.length;
       const targetX = 50;
-      const targetY = 82;
+      const targetY = 62;
       let closest = 0;
       let closestDistance = Infinity;
 
       cardRefs.current.forEach((card, index) => {
         if (!card) return;
 
-        const t = (index / count + progress * 1.55) % 1;
-        const x = 5 + t * 90;
-        const y = 50 + 37 * Math.sin((t * Math.PI * 2) - Math.PI / 2);
-        const dx = 90;
-        const dy = 37 * Math.cos((t * Math.PI * 2) - Math.PI / 2) * Math.PI * 2;
+        const t = (index / count + progress * 1.38) % 1;
+        const phase = t * Math.PI * 2;
+        const x = -6 + t * 112;
+        const y = 52 - 13 * Math.sin(phase);
+        const dx = 112;
+        const dy = -13 * Math.cos(phase) * Math.PI * 2;
         const angle = Math.atan2(dy, dx) * 180 / Math.PI;
         const edgeFade = Math.min(1, Math.min(t / 0.075, (1 - t) / 0.075));
 
@@ -257,7 +258,7 @@ export default function HospitalityExperience() {
 
           <div className={styles.track}>
             <svg viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M 0 450 C 250 180, 500 720, 800 450 S 1350 180, 1600 450" />
+              <path d="M -80 468 C 250 344, 540 344, 800 468 S 1350 592, 1680 468" />
             </svg>
           </div>
 
